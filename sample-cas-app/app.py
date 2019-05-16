@@ -14,10 +14,10 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 app = Flask(__name__)
 cas = CAS(app, '/cas')
-app.config['CAS_SERVER'] = 'https://penguin:8443'
+app.config['CAS_SERVER'] = 'https://localhost:8443'
 app.config['CAS_AFTER_LOGIN'] = 'secure'
 # app.config['CAS_LOGOUT_ROUTE'] =
-# app.config['CAS_VALIDATE_ROUTE'] =
+app.config['CAS_VALIDATE_ROUTE'] = 'cas/p3/serviceValidate'
 # app.config['CAS_VALIDATE_ROUTE'] =
 
 
